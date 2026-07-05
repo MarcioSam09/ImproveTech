@@ -1,5 +1,5 @@
 // ==========================================================
-// Improve Tech — Landing Page
+// Improve Tech: Landing Page
 // ==========================================================
 
 // Habilita os estados "escondido antes do reveal" só quando o JS roda

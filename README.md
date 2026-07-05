@@ -1,11 +1,11 @@
-# Improve Tech — Landing Page
+# Improve Tech: Landing Page
 
 Site institucional da Improve Tech: agência de tecnologia e marketing digital
 formada por programadores.
 
 ## Stack
 
-HTML + CSS + JavaScript puros, sem build e sem dependências — a única
+HTML + CSS + JavaScript puros, sem build e sem dependências. A única
 requisição externa é a fonte Inter (Google Fonts).
 
 ## Estrutura
@@ -23,7 +23,7 @@ Abrir `index.html` no navegador. Pronto.
 
 ## Deploy
 
-Estático puro — funciona em Netlify, Vercel ou GitHub Pages sem configuração:
+Estático puro, funciona em Netlify, Vercel ou GitHub Pages sem configuração:
 basta apontar pro diretório raiz do repositório.
 
 ## Pendências

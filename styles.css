@@ -1,5 +1,5 @@
 /* ==========================================================
-   Improve Tech — Landing Page
+   Improve Tech: Landing Page
    Paleta: dark #0A0D12 + volt #C9F73A + cream #F5ECD7
    ========================================================== */
 
@@ -558,7 +558,7 @@ footer a:hover { color: var(--accent); }
 .footer-links { display: flex; gap: 24px; }
 
 /* ---------- Reveal on scroll ---------- */
-/* só esconde quando o JS está ativo (body.js) — sem JS, tudo visível */
+/* só esconde quando o JS está ativo (body.js); sem JS, tudo visível */
 .js .reveal {
   opacity: 0;
   transform: translateY(34px);
