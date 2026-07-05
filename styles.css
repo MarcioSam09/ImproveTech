@@ -47,6 +47,17 @@ body {
   margin-bottom: 22px;
 }
 
+/* em seções claras (cream), texto lime direto no fundo fica sem contraste;
+   vira um selo com fundo pra continuar legível */
+.section-light .eyebrow {
+  display: inline-block;
+  color: var(--dark);
+  background: var(--accent);
+  padding: 7px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
 h1 {
   font-size: clamp(46px, 8vw, 96px);
   font-weight: 900;
@@ -394,7 +405,6 @@ header.scrolled { border-bottom-color: var(--border-dark); }
 }
 .phone-frame img { width: 100%; display: block; border-radius: 18px; }
 
-.case-info .eyebrow { color: var(--accent); }
 .case-info h3 { font-size: clamp(28px, 3vw, 40px); font-weight: 800; letter-spacing: -0.03em; color: var(--text-on-light); }
 .case-info .lead { margin: 20px 0 30px; }
 
