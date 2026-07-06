@@ -133,7 +133,7 @@ header.scrolled { border-bottom-color: var(--border-dark); }
 .logo { display: flex; align-items: center; text-decoration: none; }
 .logo svg { height: 34px; width: auto; display: block; }
 
-.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
   color: var(--muted-on-dark);
   text-decoration: none;
@@ -426,6 +426,123 @@ header.scrolled { border-bottom-color: var(--border-dark); }
 .case-link small { display: block; color: var(--body-on-light); font-size: 14px; margin-top: 2px; }
 .case-link .arrow { font-size: 22px; color: var(--text-on-light); flex-shrink: 0; }
 
+/* ---------- Modelos (vitrine de soluções) ---------- */
+.modelos { padding: 110px 0; }
+.modelos .section-head { max-width: 700px; margin-bottom: 60px; }
+.modelos .section-head p { color: var(--muted-on-dark); }
+
+.modelos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.modelo {
+  display: flex;
+  flex-direction: column;
+  background: var(--dark-2);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.modelo:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 247, 58, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.modelo-preview {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark);
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(201, 247, 58, 0.09), transparent 68%),
+    #0E1219;
+}
+
+.modelo-body { padding: 26px 26px 30px; }
+.modelo-body h3 { font-size: 20px; margin-bottom: 10px; }
+.modelo-body p { font-size: 15px; color: var(--muted-on-dark); margin-bottom: 18px; }
+.modelo .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.modelos-foot {
+  margin-top: 44px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--muted-on-dark);
+}
+.modelos-foot a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.modelos-foot a:hover { text-decoration: underline; }
+
+/* --- Mockups desenhados em CSS (sem imagem) --- */
+.mock-browser {
+  width: 100%;
+  background: #171C26;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
+}
+.mock-bar { display: flex; gap: 5px; align-items: center; padding: 8px 12px; background: #232935; }
+.mock-bar i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, 0.22); }
+.mock-screen { padding: 16px; }
+
+/* mockup site institucional */
+.mock-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.mock-nav span { height: 6px; width: 42px; border-radius: 3px; background: rgba(255, 255, 255, 0.18); }
+.mock-nav .mock-pill { width: 28px; background: var(--accent); }
+.mock-hero { margin-bottom: 18px; }
+.mock-h { height: 10px; width: 82%; border-radius: 4px; background: rgba(255, 255, 255, 0.6); margin-bottom: 8px; }
+.mock-h.short { width: 55%; margin-bottom: 14px; }
+.mock-btn { height: 13px; width: 66px; border-radius: 4px; background: var(--accent); }
+.mock-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.mock-cards div { height: 42px; border-radius: 6px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.06); }
+
+/* mockup página de links (celular) */
+.mock-phone {
+  width: 150px;
+  background: #171C26;
+  border-radius: 24px;
+  padding: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
+}
+.mock-phone-screen {
+  background: #0E1219;
+  border-radius: 16px;
+  padding: 16px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mock-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); margin-bottom: 12px; }
+.mock-name { height: 8px; width: 72px; border-radius: 4px; background: rgba(255, 255, 255, 0.6); margin-bottom: 6px; }
+.mock-sub { height: 5px; width: 104px; border-radius: 3px; background: rgba(255, 255, 255, 0.2); margin-bottom: 16px; }
+.mock-linklist { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.mock-linklist span { height: 22px; border-radius: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.07); }
+.mock-linklist span.on { background: var(--accent); border-color: var(--accent); }
+
+/* mockup cardápio digital */
+.mock-menu-head { margin-bottom: 12px; }
+.mock-menu-head span { display: block; height: 9px; width: 92px; border-radius: 4px; background: rgba(255, 255, 255, 0.55); }
+.mock-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.mock-row:first-of-type { border-top: none; padding-top: 0; }
+.mock-row .thumb { width: 32px; height: 32px; border-radius: 6px; background: rgba(255, 255, 255, 0.1); flex-shrink: 0; }
+.mock-row .lines { flex: 1; }
+.mock-row .lines b { display: block; height: 6px; width: 68%; border-radius: 3px; background: rgba(255, 255, 255, 0.42); margin-bottom: 6px; }
+.mock-row .lines i { display: block; height: 5px; width: 45%; border-radius: 3px; background: rgba(255, 255, 255, 0.18); }
+.mock-row .price { height: 9px; width: 28px; border-radius: 3px; background: var(--accent); flex-shrink: 0; }
+
 /* ---------- Diferencial (fundo volt) ---------- */
 .diferencial { background: var(--accent); color: var(--dark); padding: 110px 0; }
 
@@ -594,6 +711,6 @@ footer a:hover { color: var(--accent); }
   .portfolio-case, .diferencial-grid { grid-template-columns: 1fr; gap: 44px; }
   .case-visual { min-height: 0; margin-bottom: 30px; }
   .phone-frame { right: 4px; bottom: -24px; width: 128px; }
-  .section-light, .servicos, .diferencial, .processo { padding: 80px 0; }
+  .section-light, .servicos, .modelos, .diferencial, .processo { padding: 80px 0; }
   .cta-final { padding: 96px 0; }
 }
