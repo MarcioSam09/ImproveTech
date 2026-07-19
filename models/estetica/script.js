@@ -1,4 +1,4 @@
-// LUANA RIBEIRO · ESTÉTICA AVANÇADA · demo Improve Tech
+// LUANA RIBEIRO · ESTÉTICA AVANÇADA · demo TechXugo
 
 // ─────────── Header muda ao rolar ───────────
 const header = document.getElementById('header');

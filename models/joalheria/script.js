@@ -1,4 +1,4 @@
-// ÁUREA JOALHERIA · demo Improve Tech
+// ÁUREA JOALHERIA · demo TechXugo
 
 // ─────────── Header muda ao rolar ───────────
 const header = document.getElementById('header');

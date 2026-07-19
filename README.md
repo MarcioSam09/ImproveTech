@@ -1,7 +1,7 @@
-# Improve Tech: Landing Page
+# TechXugo: Landing Page
 
-Site institucional da Improve Tech: agência de tecnologia e marketing digital
-formada por programadores.
+Site institucional da TechXugo (ex-Improve Tech): agência de tecnologia e
+marketing digital formada por programadores. A gente cava até resolver.
 
 ## Stack
 
