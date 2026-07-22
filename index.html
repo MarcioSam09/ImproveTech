@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0D12">
   <title>TechXugo: Presença digital com garra, feita por programadores</title>
   <meta name="description" content="TechXugo: agência de tecnologia e marketing digital formada por programadores. Sites, redes sociais e sistemas sob medida pra pequenos negócios. A gente cava até resolver.">
+  <link rel="icon" type="image/png" href="assets/texugo-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,29 +14,29 @@
 </head>
 <body>
 
+  <!-- ============ MEDIDOR DE PROFUNDIDADE (scroll = cavar) ============ -->
+  <div class="profundimetro" aria-hidden="true">
+    <span class="prof-topo">0 m</span>
+    <div class="prof-linha"><i class="prof-fill"></i></div>
+    <span class="prof-label">0,0 m</span>
+  </div>
+
   <!-- ============ HEADER ============ -->
   <header>
     <div class="container nav">
       <a class="logo" href="#" aria-label="TechXugo">
-        <svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" role="img">
-          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="17 12 7 24 17 36" stroke="#FAFAF7" stroke-width="4.5"/>
-            <polyline points="31 12 41 24 31 36" stroke="#FAFAF7" stroke-width="4.5"/>
-            <line x1="19.5" y1="34" x2="28.5" y2="14" stroke="#C9F73A" stroke-width="4.5"/>
-            <polyline points="22 14.5 28.5 14 28 20.5" stroke="#C9F73A" stroke-width="4.5"/>
-          </g>
-          <text x="54" y="33" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900" letter-spacing="-1" fill="#FAFAF7">tech<tspan fill="#C9F73A">x</tspan>ugo</text>
-        </svg>
+        <img class="logo-mark" src="assets/texugo-256.png" alt="Mascote texugo TechXugo" width="42" height="41">
+        <span class="logo-word">tech<span class="volt">xugo</span></span>
       </a>
       <ul class="nav-links">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#portfolio">Trabalho no ar</a></li>
         <li><a href="#modelos">Modelos</a></li>
-        <li><a href="#diferencial">Por que a gente</a></li>
+        <li><a href="#diferencial">Jeito texugo</a></li>
         <li><a href="#socios">Quem somos</a></li>
         <li><a href="#processo">Como funciona</a></li>
       </ul>
-      <a class="btn btn-primary" href="#contato">Falar com a gente</a>
+      <a class="btn btn-primary" href="#contato">Bora cavar?</a>
       <button class="hamburger" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
@@ -43,40 +45,63 @@
       <a href="#servicos">Serviços</a>
       <a href="#portfolio">Trabalho no ar</a>
       <a href="#modelos">Modelos</a>
-      <a href="#diferencial">Por que a gente</a>
+      <a href="#diferencial">Jeito texugo</a>
       <a href="#socios">Quem somos</a>
       <a href="#processo">Como funciona</a>
-      <a href="#contato">Falar com a gente →</a>
+      <a href="#contato">Bora cavar? →</a>
     </nav>
   </header>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero-glow"></div>
-    <div class="container">
-      <span class="eyebrow">Tecnologia + marketing · feita por programadores</span>
-      <h1>
-        Presença digital<br>
-        que <span class="rotator">vende.</span><span class="cursor-bar"></span>
-      </h1>
-      <p class="lead">
-        A gente cuida do seu site, das suas redes e das suas propostas. E, quando o
-        problema é mais complicado, programa a solução sob medida. Porque aqui quem
-        atende você é programador, não vendedor. A gente cava até resolver.
-      </p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#contato">Quero conversar</a>
-        <a class="btn btn-ghost" href="#portfolio">Ver trabalho no ar</a>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Tecnologia + marketing · feita por programadores</span>
+        <h1>
+          Uns arranham.<br>
+          A gente <span class="volt">cava</span> até <span class="rotator">resolver.</span><span class="cursor-bar"></span>
+        </h1>
+        <p class="lead">
+          A gente cuida do seu site, das suas redes e das suas propostas. E quando o
+          problema é mais complicado, programa a solução sob medida. Aqui quem atende
+          você é programador, não vendedor: garra no sentido literal.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contato">Quero conversar</a>
+          <a class="btn btn-ghost" href="#portfolio">Ver trabalho no ar</a>
+        </div>
+        <p class="hero-note"><span class="dot"></span>Conversa direta com os sócios, sem intermediário. Sem compromisso.</p>
       </div>
-      <p class="hero-note"><span class="dot"></span>Conversa direta com os sócios, sem intermediário. Sem compromisso.</p>
+
+      <!-- mascote geométrico em estilo blueprint -->
+      <div class="hero-mascote reveal reveal-delay-1" aria-hidden="true">
+        <svg viewBox="0 0 340 360" xmlns="http://www.w3.org/2000/svg">
+          <!-- linhas de construção -->
+          <circle cx="170" cy="180" r="150" fill="none" stroke="rgba(201,247,58,0.20)" stroke-width="1" stroke-dasharray="5 8"/>
+          <circle cx="170" cy="180" r="112" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <line x1="170" y1="8" x2="170" y2="44" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+          <line x1="170" y1="316" x2="170" y2="352" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+          <line x1="0" y1="180" x2="36" y2="180" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+          <line x1="304" y1="180" x2="340" y2="180" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+          <!-- marcas de garra -->
+          <g stroke="#C9F73A" stroke-width="5" stroke-linecap="round" opacity="0.9">
+            <line x1="258" y1="290" x2="284" y2="254"/>
+            <line x1="273" y1="300" x2="299" y2="264"/>
+            <line x1="288" y1="310" x2="314" y2="274"/>
+          </g>
+          <!-- mascote texugo (imagem gerada, fundo removido) -->
+          <image href="assets/texugo.png" x="38" y="50" width="264" height="260" preserveAspectRatio="xMidYMid meet"/>
+        </svg>
+      </div>
     </div>
   </section>
 
   <!-- ============ MARQUEE ============ -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Sites</span><span>·</span><span>Sistemas sob medida</span><span>·</span><span>Automações</span><span>·</span><span>Redes sociais</span><span>·</span><span>Propostas comerciais</span><span>·</span><span>SEO</span><span>·</span>
-      <span>Sites</span><span>·</span><span>Sistemas sob medida</span><span>·</span><span>Automações</span><span>·</span><span>Redes sociais</span><span>·</span><span>Propostas comerciais</span><span>·</span><span>SEO</span><span>·</span>
+      <span>Sites</span><span class="sep">///</span><span>Sistemas sob medida</span><span class="sep">///</span><span>Automações</span><span class="sep">///</span><span>Redes sociais</span><span class="sep">///</span><span>Propostas comerciais</span><span class="sep">///</span><span>SEO</span><span class="sep">///</span>
+      <span>Sites</span><span class="sep">///</span><span>Sistemas sob medida</span><span class="sep">///</span><span>Automações</span><span class="sep">///</span><span>Redes sociais</span><span class="sep">///</span><span>Propostas comerciais</span><span class="sep">///</span><span>SEO</span><span class="sep">///</span>
     </div>
   </div>
 
@@ -86,7 +111,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">A gente sabe como é</span>
         <h2>Você já tentou resolver isso antes, né?</h2>
-        <hr class="rule">
+        <div class="garra-rule"><span></span><span></span><span></span></div>
         <p class="lead">
           A maioria dos nossos clientes chegou até a gente depois de pelo menos uma
           dessas três histórias:
@@ -128,6 +153,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">O que fazemos</span>
         <h2>Três frentes, um objetivo: fazer seu negócio aparecer e funcionar melhor.</h2>
+        <div class="garra-rule"><span></span><span></span><span></span></div>
       </div>
 
       <div class="servico reveal">
@@ -189,7 +215,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Trabalho no ar</span>
         <h2>Não é promessa. Já tá rodando.</h2>
-        <hr class="rule" style="background: var(--text-on-light);">
+        <div class="garra-rule"><span></span><span></span><span></span></div>
       </div>
       <div class="portfolio-case">
         <div class="case-visual reveal">
@@ -239,7 +265,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">O que a gente cria</span>
         <h2>Do link na bio ao site completo.</h2>
-        <hr class="rule">
+        <div class="garra-rule"><span></span><span></span><span></span></div>
         <p class="lead">
           Cada negócio precisa de um tipo de página. Aqui vão os modelos que a
           gente entrega, todos feitos sob medida pra sua marca, nunca template
@@ -346,19 +372,51 @@
     </div>
   </section>
 
-  <!-- ============ DIFERENCIAL ============ -->
+  <!-- ============ JEITO TEXUGO (DIFERENCIAL) ============ -->
   <section class="diferencial" id="diferencial">
-    <div class="container diferencial-grid">
-      <div class="reveal">
+    <div class="garra-gigante" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="container">
+      <div class="section-head reveal">
         <span class="eyebrow">Por que a gente é diferente</span>
-        <h2>Somos programadores. Isso muda tudo.</h2>
-        <hr class="rule">
+        <h2>Somos programadores com jeito de texugo.</h2>
+        <div class="garra-rule"><span></span><span></span><span></span></div>
         <p class="lead">
           A maioria das agências para onde a ferramenta deixa. A gente não: quando o
           template não resolve, a gente abre o código e constrói. Seu problema não
           precisa caber no pacote: o pacote é feito pro seu problema.
         </p>
       </div>
+
+      <div class="pilares">
+        <div class="pilar reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round">
+            <line x1="6" y1="18" x2="11" y2="5"/>
+            <line x1="11" y1="19" x2="16" y2="6"/>
+            <line x1="16" y1="20" x2="21" y2="7"/>
+          </svg>
+          <h3>Garra</h3>
+          <p>No sentido literal e no figurado: a gente não larga o seu problema até ele virar solução.</p>
+        </div>
+        <div class="pilar reveal reveal-delay-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="5" x2="20" y2="5"/>
+            <line x1="6" y1="9" x2="18" y2="9"/>
+            <line x1="12" y1="7" x2="12" y2="20"/>
+            <polyline points="8,16 12,20 16,16"/>
+          </svg>
+          <h3>Cavar fundo</h3>
+          <p>Agência genérica entrega post e anúncio. A gente desce até a raiz do problema, camada por camada.</p>
+        </div>
+        <div class="pilar reveal reveal-delay-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="20" x2="21" y2="20"/>
+            <path d="M7 20 v-5 a5 5 0 0 1 10 0 v5"/>
+          </svg>
+          <h3>Toca sólida</h3>
+          <p>Texugos constroem tocas que duram gerações. Seu site e seu sistema são a sua toca: feitos pra durar, sem gambiarra.</p>
+        </div>
+      </div>
+
       <blockquote class="reveal reveal-delay-1">
         "Quando o problema do cliente é mais complicado, a gente programa a solução.
         Não empurra mais um combo de posts."
@@ -372,7 +430,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Quem somos</span>
         <h2>Dois sócios, dois programadores. E os dois na sua reunião.</h2>
-        <hr class="rule" style="background: var(--text-on-light);">
+        <div class="garra-rule"><span></span><span></span><span></span></div>
         <p class="lead">
           Aqui não tem "gerente de contas" repassando recado. Quem entende do seu
           projeto é quem senta com você, do primeiro papo à entrega.
@@ -386,31 +444,35 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Como funciona</span>
-        <h2>Simples, direto e sem burocracia.</h2>
-        <hr class="rule">
+        <h2>Simples, direto e cada vez mais fundo.</h2>
+        <div class="garra-rule"><span></span><span></span><span></span></div>
         <p class="lead">
           Do primeiro contato à entrega, você fala sempre com os dois sócios:
-          nas reuniões estamos os dois, sempre.
+          nas reuniões estamos os dois, sempre. E a cada etapa a gente cava mais fundo.
         </p>
       </div>
       <div class="passos">
         <div class="passo reveal">
-          <span class="num">PASSO 1</span>
+          <span class="prof-marca">0 m</span>
+          <span class="num">ETAPA 1</span>
           <h3>Conversa inicial</h3>
           <p>Você conta o momento do negócio e o que já tentou. Sem formulário gigante, sem compromisso.</p>
         </div>
         <div class="passo reveal reveal-delay-1">
-          <span class="num">PASSO 2</span>
+          <span class="prof-marca">2 m</span>
+          <span class="num">ETAPA 2</span>
           <h3>Diagnóstico</h3>
           <p>A gente analisa sua presença atual e volta com um plano claro: o que fazer, em que ordem e por quê.</p>
         </div>
         <div class="passo reveal reveal-delay-2">
-          <span class="num">PASSO 3</span>
+          <span class="prof-marca">5 m</span>
+          <span class="num">ETAPA 3</span>
           <h3>Proposta sob medida</h3>
           <p>Você recebe uma proposta com escopo e valores definidos, do tamanho do seu problema, não do nosso pacote.</p>
         </div>
         <div class="passo reveal reveal-delay-3">
-          <span class="num">PASSO 4</span>
+          <span class="prof-marca">toca</span>
+          <span class="num">ETAPA 4</span>
           <h3>Mão na massa</h3>
           <p>Execução com entregas combinadas e comunicação direta. Você acompanha tudo, sem surpresa no final.</p>
         </div>
@@ -421,6 +483,9 @@
   <!-- ============ CTA FINAL ============ -->
   <section class="cta-final" id="contato">
     <div class="container">
+      <div class="cta-mascote reveal" aria-hidden="true">
+        <img src="assets/texugo-256.png" alt="" width="82" height="81">
+      </div>
       <span class="eyebrow reveal">Bora cavar?</span>
       <h2 class="reveal">Conta pra gente o que você já tentou. A gente te diz o que faria diferente.</h2>
       <p class="lead reveal reveal-delay-1">
@@ -439,7 +504,7 @@
   <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container footer-row">
-      <p>© 2026 TechXugo · Tecnologia e marketing digital com garra. Ficamos à disposição.</p>
+      <p>© 2026 TechXugo <span class="volt">///</span> A gente cava até resolver. Ficamos à disposição.</p>
       <div class="footer-links">
         <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://instagram.com/tech.xugo" target="_blank" rel="noopener">Instagram</a>

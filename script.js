@@ -28,7 +28,7 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 // ---------- Hero: palavra rotativa (efeito máquina de escrever) ----------
-const palavras = ['vende.', 'aparece.', 'funciona.', 'converte.'];
+const palavras = ['vender.', 'aparecer.', 'funcionar.', 'converter.'];
 const rotator = document.querySelector('.rotator');
 let palavraIdx = 0;
 let charIdx = 0;
@@ -88,6 +88,34 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ---------- Profundímetro: preenche e mostra "profundidade" ao rolar ----------
+const profundimetro = document.querySelector('.profundimetro');
+const profFill = document.querySelector('.prof-fill');
+const profLabel = document.querySelector('.prof-label');
+const secoesClaras = document.querySelectorAll('.section-light, .diferencial');
+
+if (profundimetro && profFill && profLabel) {
+  const atualizarProfundidade = () => {
+    const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const progresso = alturaTotal > 0 ? Math.min(1, Math.max(0, window.scrollY / alturaTotal)) : 0;
+    const metros = (progresso * 100).toFixed(1).replace('.', ',');
+    profFill.style.transform = `scaleY(${progresso})`;
+    profLabel.textContent = `${metros} m`;
+
+    // contraste: escurece o medidor ao passar pelas seções claras (cream) ou volt
+    const centroY = window.innerHeight / 2;
+    let sobreClaro = false;
+    secoesClaras.forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      if (r.top <= centroY && r.bottom >= centroY) sobreClaro = true;
+    });
+    profundimetro.classList.toggle('on-light', sobreClaro);
+  };
+  window.addEventListener('scroll', atualizarProfundidade, { passive: true });
+  window.addEventListener('resize', atualizarProfundidade);
+  atualizarProfundidade();
+}
 
 // ---------- Portfólio: tilt sutil nos frames ----------
 const caseVisual = document.querySelector('.case-visual');
