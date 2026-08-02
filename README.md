@@ -28,6 +28,6 @@ basta apontar pro diretório raiz do repositório.
 
 ## Pendências
 
-- [ ] Número real do WhatsApp (hoje: placeholder `5500000000000`)
-- [ ] E-mail e Instagram reais
+- [x] Número real do WhatsApp: `47 99971-2317`
+- [x] E-mail e Instagram reais: `techxugo7@gmail.com` / `@tech.xugo`
 - [ ] Fotos dos sócios em `assets/socio-marcio.jpg` e `assets/socio-alexander.jpg`
