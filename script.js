@@ -96,7 +96,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const profundimetro = document.querySelector('.profundimetro');
 const profFill = document.querySelector('.prof-fill');
 const profLabel = document.querySelector('.prof-label');
-const secoesClaras = document.querySelectorAll('.section-light, .diferencial');
+const secoesClaras = document.querySelectorAll('.section-light');
 
 if (profundimetro && profFill && profLabel) {
   const atualizarProfundidade = () => {
