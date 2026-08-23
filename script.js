@@ -15,16 +15,28 @@ window.addEventListener('scroll', () => {
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+// leitor de tela precisa saber se as garras estão abertas ou fechadas
+function alternarMenu(aberto) {
+  hamburger.classList.toggle('open', aberto);
+  mobileMenu.classList.toggle('open', aberto);
+  hamburger.setAttribute('aria-expanded', String(aberto));
+  hamburger.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+}
+
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
+  alternarMenu(!hamburger.classList.contains('open'));
 });
 
 mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  });
+  link.addEventListener('click', () => alternarMenu(false));
+});
+
+// Esc fecha e devolve o foco pro botão, senão o teclado fica preso no menu
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && hamburger.classList.contains('open')) {
+    alternarMenu(false);
+    hamburger.focus();
+  }
 });
 
 // ---------- Hero: palavra rotativa (efeito máquina de escrever) ----------
