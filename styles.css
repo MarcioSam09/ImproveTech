@@ -539,7 +539,7 @@ header.scrolled { border-bottom-color: var(--border-dark); }
 /* ---------- Modelos (vitrine de soluções) ---------- */
 .modelos { padding: 110px 0; }
 .modelos .section-head { max-width: 700px; margin-bottom: 60px; }
-.modelos .section-head p { color: var(--muted-on-dark); }
+.modelos .section-head p { color: var(--body-on-light); }
 
 .modelos-grid {
   display: grid;
@@ -551,6 +551,7 @@ header.scrolled { border-bottom-color: var(--border-dark); }
   display: flex;
   flex-direction: column;
   background: var(--dark-2);
+  color: var(--text-on-dark);
   border: 1px solid var(--border-dark);
   border-radius: 16px;
   overflow: hidden;
@@ -584,10 +585,10 @@ header.scrolled { border-bottom-color: var(--border-dark); }
   margin-top: 44px;
   text-align: center;
   font-size: 16px;
-  color: var(--muted-on-dark);
+  color: var(--body-on-light);
 }
 .modelos-foot a {
-  color: var(--accent);
+  color: var(--text-on-light);
   text-decoration: none;
   font-weight: 700;
   white-space: nowrap;
@@ -786,13 +787,14 @@ header.scrolled { border-bottom-color: var(--border-dark); }
 /* ---------- Processo (descida na toca) ---------- */
 .processo { padding: 110px 0; }
 .processo .section-head { max-width: 700px; margin-bottom: 64px; }
-.processo .section-head p { color: var(--muted-on-dark); }
+.processo .section-head p { color: var(--body-on-light); }
 
 .passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
 
 .passo {
   position: relative;
   background: var(--dark-2);
+  color: var(--text-on-dark);
   border: 1px solid var(--border-dark);
   border-radius: 14px;
   padding: 34px 28px;
@@ -921,3 +923,10 @@ footer .volt { font-weight: 800; }
   .section-light, .servicos, .modelos, .diferencial, .processo { padding: 80px 0; }
   .cta-final { padding: 96px 0; }
 }
+
+/* ---------- Trava de contraste em seção clara ---------- */
+/* Regras por seção (.modelos .section-head p, etc.) empatam em especificidade
+   com .section-light e venceriam por ordem. Esta fica no fim de propósito:
+   seção que vira clara nunca deixa o texto do cabeçalho apagado no cream. */
+.section-light .section-head p,
+.section-light .section-head .lead { color: var(--body-on-light); }
