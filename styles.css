@@ -137,6 +137,7 @@ h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
 .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.35); }
 
 .btn-dark { background: var(--dark); color: var(--off-white); }
+.btn-dark:hover { box-shadow: 0 12px 34px rgba(20, 23, 28, 0.28); }
 
 /* ---------- Profundímetro (scroll = cavar) ---------- */
 .profundimetro {
@@ -219,6 +220,7 @@ header.scrolled { border-bottom-color: var(--border-dark); }
   transition: color 0.15s;
 }
 .nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--text-on-dark); }
 
 .nav .btn { padding: 12px 24px; font-size: 14px; }
 
@@ -401,6 +403,7 @@ header.scrolled { border-bottom-color: var(--border-dark); }
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(20, 23, 28, 0.1); }
+.card .btn { margin-top: 24px; padding: 13px 26px; font-size: 15px; }
 
 .card .num {
   font-size: 48px;
