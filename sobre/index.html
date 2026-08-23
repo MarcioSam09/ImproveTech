@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0D12">
+  <title>Quem somos · TechXugo</title>
+  <meta name="description" content="Dois sócios, dois programadores, e os dois na sua reunião. O jeito texugo de resolver problema.">
+  <link rel="icon" type="image/png" href="../assets/texugo-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- ============ MEDIDOR DE PROFUNDIDADE (scroll = cavar) ============ -->
+  <div class="profundimetro" aria-hidden="true">
+    <span class="prof-topo">0 m</span>
+    <div class="prof-linha"><i class="prof-fill"></i></div>
+    <span class="prof-label">0,0 m</span>
+  </div>
+
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="../index.html" aria-label="TechXugo">
+        <img class="logo-mark" src="../assets/texugo-256.png" alt="Mascote texugo TechXugo" width="42" height="41">
+        <span class="logo-word">tech<span class="volt">xugo</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../servicos/">Serviços</a></li>
+        <li><a href="../trabalho/">Trabalho no ar</a></li>
+        <li><a href="../sobre/" aria-current="page">Quem somos</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#contato">Bora cavar?</a>
+      <button class="hamburger" aria-label="Abrir menu">
+        <!-- <span></span><span></span><span></span> -->
+      </button>
+    </div>
+    <nav class="mobile-menu">
+      <a href="../servicos/">Serviços</a>
+      <a href="../trabalho/">Trabalho no ar</a>
+      <a href="../sobre/" aria-current="page">Quem somos</a>
+      <a href="#contato">Bora cavar? →</a>
+    </nav>
+  </header>
+
+  <!-- ============ JEITO TEXUGO (DIFERENCIAL) ============ -->
+  <section class="diferencial" id="diferencial">
+    <div class="garra-gigante" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por que a gente é diferente</span>
+        <h2>Somos programadores com jeito de texugo.</h2>
+        <!-- <div class="garra-rule"><span></span><span></span><span></span></div> -->
+        <p class="lead">
+          A maioria das agências para onde a ferramenta deixa. A gente não: quando o
+          template não resolve, a gente abre o código e constrói. Seu problema não
+          precisa caber no pacote: o pacote é feito pro seu problema.
+        </p>
+      </div>
+
+      <div class="pilares">
+        <div class="pilar reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round">
+            <line x1="6" y1="18" x2="11" y2="5"/>
+            <line x1="11" y1="19" x2="16" y2="6"/>
+            <line x1="16" y1="20" x2="21" y2="7"/>
+          </svg>
+          <h3>Garra</h3>
+          <p>No sentido literal e no figurado: a gente não larga o seu problema até ele virar solução.</p>
+        </div>
+        <div class="pilar reveal reveal-delay-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="5" x2="20" y2="5"/>
+            <line x1="6" y1="9" x2="18" y2="9"/>
+            <line x1="12" y1="7" x2="12" y2="20"/>
+            <polyline points="8,16 12,20 16,16"/>
+          </svg>
+          <h3>Cavar fundo</h3>
+          <p>Agência genérica entrega post e anúncio. A gente desce até a raiz do problema, camada por camada.</p>
+        </div>
+        <div class="pilar reveal reveal-delay-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="20" x2="21" y2="20"/>
+            <path d="M7 20 v-5 a5 5 0 0 1 10 0 v5"/>
+          </svg>
+          <h3>Toca sólida</h3>
+          <p>Texugos constroem tocas que duram gerações. Seu site e seu sistema são a sua toca: feitos pra durar, sem gambiarra.</p>
+        </div>
+      </div>
+
+      <blockquote class="reveal reveal-delay-1">
+        "Quando o problema do cliente é mais complicado, a gente programa a solução.
+        Não empurra mais um combo de posts."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ QUEM SOMOS ============ -->
+  <section class="section-light socios" id="socios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Quem somos</span>
+        <h2>Dois sócios, dois programadores. E os dois na sua reunião.</h2>
+        <!-- <div class="garra-rule"><span></span><span></span><span></span></div> -->
+        <p class="lead">
+          Aqui não tem "gerente de contas" repassando recado. Quem entende do seu
+          projeto é quem senta com você, do primeiro papo à entrega.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final" id="contato">
+    <div class="container">
+      <div class="cta-mascote reveal" aria-hidden="true">
+        <img src="../assets/texugo-256.png" alt="" width="82" height="81">
+      </div>
+      <span class="eyebrow reveal">Bora cavar?</span>
+      <h2 class="reveal">Conta pra gente o que você já tentou. A gente te diz o que faria diferente.</h2>
+      <p class="lead reveal reveal-delay-1">
+        Uma conversa de 30 minutos, direto com os sócios. Se a gente não for a melhor
+        opção pro seu caso, te falamos isso também.
+      </p>
+      <a class="btn btn-primary reveal reveal-delay-2" href="https://wa.me/5547999712317" target="_blank" rel="noopener">
+        Chamar no WhatsApp
+      </a>
+      <p class="hero-note reveal reveal-delay-2" style="margin-top: 28px;">
+        Ou manda um e-mail: <a href="mailto:comercial.techxugo@gmail.com">comercial.techxugo@gmail.com</a>
+      </p>
+      <p class="hero-note reveal reveal-delay-2" style="margin-top: 8px;">
+        Segue a gente no Instagram: <a href="https://instagram.com/tech.xugo" target="_blank" rel="noopener">@tech.xugo</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-row">
+      <p>© 2026 TechXugo <span class="volt">///</span> A gente cava até resolver. Ficamos à disposição.</p>
+      <div class="footer-links">
+        <a href="https://wa.me/5547999712317" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/tech.xugo" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:comercial.techxugo@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -58,10 +58,13 @@ function digitar() {
 }
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (reduceMotion) {
-  rotator.textContent = palavras[0];
-} else {
-  digitar();
+// o rotator so existe no hero da home; nas paginas internas nao ha o que digitar
+if (rotator) {
+  if (reduceMotion) {
+    rotator.textContent = palavras[0];
+  } else {
+    digitar();
+  }
 }
 
 // ---------- Hero: glow segue o mouse ----------
