@@ -1,0 +1,402 @@
+/* ═══════════════════════════════════════════════════
+   LAKAZA Elétrica e Iluminação
+   Paleta tirada do material da própria loja: cinza
+   carvão de fundo, amarelo da logo como destaque e
+   texto off-white. Mesma combinação do cartão de
+   contato e do letreiro da fachada.
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  --ink:     #303136;   /* fundo base, o carvão da marca */
+  --ink-alt: #2A2B2F;   /* seção alternada, um tom abaixo */
+  --surface: #3A3B41;   /* cards e superfícies */
+  --deep:    #212226;   /* header e rodapé */
+
+  --amber:   #FECB0A;   /* amarelo da logo LAKAZA */
+  --text:    #F3F3F1;
+  --muted:   #B0B3B9;   /* 6,4:1 sobre o fundo base */
+
+  --line:    rgba(255,255,255,.10);
+  --line-2:  rgba(255,255,255,.06);
+
+  --wrap: 1120px;
+  --r:    12px;
+  --r-lg: 18px;
+
+  --font: 'Archivo', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 3px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; width: 100%; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--amber); color: #17181B;
+  padding: 12px 20px; font-weight: 700; z-index: 200; text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
+/* ────── tipografia ────── */
+
+h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -.032em; line-height: 1.06; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.4vw, 3.7rem); font-weight: 900; }
+h2 { font-size: clamp(1.75rem, 3.6vw, 2.5rem); }
+h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.3; }
+p  { margin: 0; }
+
+.eyebrow {
+  font-size: .74rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 11px;
+}
+/* barrinha âmbar no lugar de ícone: o amarelo aparece como marca
+   da casa sem virar bloco de cor */
+.eyebrow::before {
+  content: ''; width: 26px; height: 3px;
+  background: var(--amber); border-radius: 2px; flex: 0 0 auto;
+}
+
+.sec-sub, .hero-sub { color: var(--muted); max-width: 52ch; line-height: 1.68; }
+.sec-head { margin-bottom: 44px; }
+.sec-head h2 { margin-bottom: 16px; }
+
+/* ────── botões ────── */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 26px; min-height: 48px;
+  border-radius: 9px;
+  font-family: var(--font); font-weight: 700; font-size: .95rem;
+  text-decoration: none; cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.btn-lg { padding: 17px 32px; min-height: 54px; font-size: 1rem; }
+
+.btn-amber { background: var(--amber); color: #1C1D20; }
+.btn-amber:hover { background: #FFD839; }
+
+.btn-line { background: rgba(255,255,255,.06); color: var(--text); border-color: var(--line); }
+.btn-line:hover { border-color: var(--amber); color: var(--amber); }
+
+.link {
+  display: inline-block;
+  font-weight: 700; font-size: .89rem;
+  text-decoration: none; color: var(--text);
+  border-bottom: 2px solid var(--amber);
+  padding-bottom: 2px;
+  transition: color .2s ease;
+}
+.link:hover { color: var(--amber); }
+
+/* ────── header ────── */
+
+.header { position: sticky; top: 0; z-index: 100; background: var(--deep); border-bottom: 1px solid var(--line-2); }
+.header-inner { display: flex; align-items: center; gap: 24px; padding-top: 11px; padding-bottom: 11px; }
+
+.brand { line-height: 0; flex: 0 0 auto; }
+.brand-logo { height: 42px; width: auto; }
+
+.nav { display: flex; gap: 26px; margin-left: auto; }
+.nav a {
+  color: rgba(255,255,255,.74); text-decoration: none;
+  font-size: .9rem; font-weight: 600; padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease;
+}
+.nav a:hover { color: #fff; border-color: var(--amber); }
+
+.header-cta { padding: 10px 19px; min-height: 42px; font-size: .87rem; }
+
+.menu-toggle {
+  display: none; background: none; border: 0; cursor: pointer;
+  width: 46px; height: 46px; padding: 12px; margin-left: auto;
+  flex-direction: column; justify-content: center; gap: 5px;
+}
+.menu-toggle span { display: block; height: 2px; background: #fff; border-radius: 2px; transition: transform .24s ease, opacity .18s ease; }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ────── hero ────── */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex; align-items: center;
+  min-height: clamp(520px, 76vh, 700px);
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+/* a foto da loja preenche o bloco inteiro e recua pro fundo.
+   Como é <img> e não background-image, o object-position
+   continua ajustável por breakpoint. */
+.hero-bg {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 26%;
+}
+
+/* véu escuro: garante contraste do texto sobre qualquer parte da foto.
+   Mais denso à esquerda, onde o texto fica. */
+.hero-veu {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(100deg, rgba(33,34,38,.95) 0%, rgba(33,34,38,.88) 42%, rgba(33,34,38,.62) 100%),
+    linear-gradient(to bottom, rgba(33,34,38,.55), rgba(33,34,38,.35));
+}
+
+.hero-inner { max-width: 760px; }
+.hero h1 { margin-bottom: 22px; }
+.hero-sub { font-size: 1.08rem; color: rgba(255,255,255,.82); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+/* ────── seções e divisórias sutis ────── */
+
+.section { padding: 92px 0; border-top: 1px solid var(--line-2); }
+.section-alt { background: var(--ink-alt); }
+
+/* ────── carrossel de modelos ────── */
+
+.carrossel-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 30px; margin-bottom: 38px;
+}
+
+.carrossel-nav { display: flex; gap: 10px; flex: 0 0 auto; }
+
+.seta {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  border: 1.5px solid var(--line);
+  color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, opacity .18s ease;
+}
+.seta svg { width: 22px; height: 22px; }
+.seta:hover:not(:disabled) { border-color: var(--amber); color: var(--amber); }
+.seta:disabled { opacity: .3; cursor: default; }
+
+/* o trilho sangra até a borda da tela pra dar a sensação de que
+   a fila de produtos continua fora do quadro */
+.carrossel { position: relative; }
+
+.trilho {
+  list-style: none; margin: 0;
+  /* alinha o primeiro card com o texto do .wrap. Usa 100% (largura útil
+     do conteúdo) e não 100vw, que inclui a barra de rolagem e jogava o
+     trilho uns 8px pra direita, desalinhando do título. */
+  padding: 4px max(24px, calc((100% - var(--wrap)) / 2 + 24px));
+  display: flex; gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* sem isto o snap ignora o padding e o trilho abre já rolado,
+     cortando o primeiro card */
+  scroll-padding-left: max(24px, calc((100% - var(--wrap)) / 2 + 24px));
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.trilho::-webkit-scrollbar { display: none; }
+.trilho:focus-visible { outline-offset: -3px; }
+
+@media (prefers-reduced-motion: reduce) { .trilho { scroll-behavior: auto; } }
+
+.produto {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+.produto figure { margin: 0; aspect-ratio: 4 / 3; background: var(--ink-alt); overflow: hidden; }
+.produto figure img { width: 100%; height: 100%; object-fit: cover; }
+
+.produto-txt { padding: 22px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.produto-txt p { color: var(--muted); font-size: .92rem; line-height: 1.58; flex: 1; }
+.produto-txt .link, .produto-txt .btn { align-self: flex-start; margin-top: 6px; }
+
+.produto-cta { background: linear-gradient(165deg, #3F4046, var(--surface)); justify-content: center; }
+.produto-cta .produto-txt { padding: 30px 24px; }
+
+/* ────── catálogo ────── */
+
+.catalogo-inner { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+.catalogo-inner .sec-head { margin-bottom: 0; }
+
+.tipos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 34px; }
+.tipos li { border-top: 2px solid var(--amber); padding-top: 13px; }
+.tipos b { display: block; font-size: 1rem; font-weight: 800; letter-spacing: -.015em; margin-bottom: 4px; }
+.tipos span { color: var(--muted); font-size: .89rem; line-height: 1.5; }
+
+/* ────── elétrica ────── */
+
+.eletrica-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.eletrica-inner h2 { margin-bottom: 16px; }
+.eletrica-inner .sec-sub { margin-bottom: 30px; }
+
+.ele-list { list-style: none; margin: 0; padding: 0; }
+.ele-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line-2);
+  font-size: 1rem; font-weight: 500;
+}
+.ele-list li:first-child { border-top: 1px solid var(--line-2); }
+
+/* ────── visite ────── */
+
+.visite-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.visite-txt h2 { margin-bottom: 16px; }
+
+.contato {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin: 32px 0 28px; padding-top: 26px;
+  border-top: 1px solid var(--line-2);
+}
+.contato dt {
+  font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.contato dd { margin: 0; font-size: .93rem; line-height: 1.6; color: var(--muted); }
+.contato dd a { color: var(--text); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line); }
+.contato dd a:hover { color: var(--amber); border-color: var(--amber); }
+
+.visite-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.mapa { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.mapa iframe { display: block; width: 100%; height: 430px; border: 0; }
+
+/* ────── footer ────── */
+
+.footer { background: var(--deep); padding-top: 58px; border-top: 1px solid var(--line-2); }
+.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1.25fr 1.25fr; gap: 40px; padding-bottom: 44px; }
+.footer-logo { height: 50px; width: auto; margin-bottom: 16px; }
+.footer-brand p { color: var(--muted); font-size: .9rem; max-width: 30ch; }
+
+.footer-col h4 { font-size: .73rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 15px; }
+.footer-col a {
+  display: block; color: var(--muted); text-decoration: none;
+  font-size: .9rem; line-height: 1.55; margin-bottom: 9px; transition: color .18s ease;
+}
+.footer-col a:hover { color: var(--amber); }
+
+.footer-base {
+  border-top: 1px solid var(--line-2);
+  padding-top: 20px; padding-bottom: 24px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  color: var(--muted); font-size: .84rem;
+}
+.credit { color: var(--text); text-decoration: none; font-weight: 500; }
+.credit em { font-style: normal; font-weight: 900; }
+.credit:hover { color: var(--amber); }
+
+/* ────── whatsapp flutuante ────── */
+
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 120;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #25D366; color: #08120C;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  transition: transform .2s ease;
+}
+.wa-float svg { width: 29px; height: 29px; }
+.wa-float:hover { transform: scale(1.07); }
+
+/* ────── reveal ────── */
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.on { opacity: 1; transform: none; }
+.d1 { transition-delay: .08s; }
+.d2 { transition-delay: .16s; }
+.d3 { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* ══════════ RESPONSIVO ══════════ */
+
+@media (max-width: 940px) {
+  .catalogo-inner, .eletrica-inner, .visite-inner { grid-template-columns: 1fr; gap: 38px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 34px; }
+  .mapa iframe { height: 340px; }
+  .produto { flex-basis: 300px; }
+}
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+
+  .nav {
+    position: fixed; inset: 60px 0 auto 0;
+    flex-direction: column; gap: 0; margin: 0;
+    background: var(--deep);
+    border-bottom: 1px solid var(--line);
+    padding: 6px 24px 20px;
+    display: none;
+  }
+  .nav.open { display: flex; }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--line-2); font-size: 1rem; }
+
+  .header-inner { gap: 12px; }
+  .brand-logo { height: 36px; }
+  .header-cta { display: none; }
+  .menu-toggle { display: flex; }
+
+  .hero { min-height: 0; padding: 62px 0 66px; }
+  /* no retrato, a foto é enquadrada mais alta pra pegar o letreiro */
+  .hero-bg { object-position: center 22%; }
+  /* no retrato o véu é vertical, mas mais leve no miolo pra
+     fachada continuar aparecendo atrás do texto */
+  .hero-veu {
+    background:
+      linear-gradient(to bottom, rgba(33,34,38,.88), rgba(33,34,38,.70) 52%, rgba(33,34,38,.90));
+  }
+  .hero-actions .btn { width: 100%; }
+
+  .section { padding: 62px 0; }
+  .sec-head { margin-bottom: 32px; }
+
+  .carrossel-head { flex-direction: column; align-items: flex-start; gap: 22px; }
+  /* o recuo continua vindo do max() lá de cima, casando com o .wrap */
+  .trilho { gap: 14px; }
+  .produto { flex-basis: 78vw; }
+
+  .tipos { grid-template-columns: 1fr; gap: 20px; }
+  .contato { grid-template-columns: 1fr; gap: 20px; }
+  .visite-actions .btn { width: 100%; }
+  .ele-btn { width: 100%; }
+
+  .footer { padding-top: 46px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+  .footer-base { flex-direction: column; }
+
+  .wa-float { right: 15px; bottom: 15px; }
+}
