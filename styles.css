@@ -51,8 +51,8 @@ body {
   display: block;
   margin-bottom: 22px;
 }
-/* as três garras viram prefixo de toda label */
-.eyebrow::before { content: '/// '; letter-spacing: 0.06em; }
+/* as quatro garras viram prefixo de toda label */
+.eyebrow::before { content: '//// '; letter-spacing: 0.06em; }
 
 /* em seções claras (cream), texto lime direto no fundo fica sem contraste;
    vira um selo com fundo pra continuar legível */
